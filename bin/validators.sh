@@ -25,8 +25,6 @@ function node_version_exists {
     local NODE_VERSION=$1
     local NODE_VERSIONS=$(get_available_node_versions)
 
-    echo 
-
     if [[ ! ${NODE_VERSIONS[@]} =~ $NODE_VERSION ]]; then
         echo -e "${BoldRed}Error: unavailable Node.js version - ${NODE_VERSION}. All available versions you can find here: https://nodejs.org/dist" >&2
         exit 1

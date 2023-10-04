@@ -16,7 +16,8 @@ function load_node_versions_and_parse_them {
     local VERSIONS_FILENAME=$1
 
     curl https://nodejs.org/dist/ > ${VERSIONS_FILENAME}.html
-    xmllint --html --xpath ".//a/text()" versions.html | sed 's/\/$//' > ${VERSIONS_FILENAME}.txt
+    cat ${VERSIONS_FILENAME}.html | sed 's/<[^>]*>//g' | sed 's/\/.*//' | sed 's/.*.tar.gz.*//' > ${VERSIONS_FILENAME}.txt
+    # xmllint --html --xpath ".//a/text()" versions.html | sed 's/\/$//' > ${VERSIONS_FILENAME}.txt
 }
 
 
