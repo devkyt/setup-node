@@ -13,7 +13,7 @@ runs:
       run: |
         cd ${{ github.action_path }}
         chmod +x ./bin/main.sh
-        ./bin/main.sh 
+        ./bin/main.sh ${{ inputs.NODE_VERSION }}
         echo "${{ github.action_path }}/env/node/bin" >> $GITHUB_PATH
       shell: bash
     - name: "Check if Node is Available"
