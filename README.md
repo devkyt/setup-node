@@ -1,6 +1,6 @@
 # Setup Node.js
 
-One more action to setup Node.js on Linux or MacOS. Minimalistic, but helpful. Supports almost all versions from [official distributive](https://nodejs.org/dist/)
+One more action to setup Node.js on Linux or MacOS. Minimalistic, but helpful. Supports almost all versions from [official distributive](https://nodejs.org/dist/).
 
 ## Usage
 
