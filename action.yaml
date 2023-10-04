@@ -1,0 +1,22 @@
+name: "Setup Node.js"
+inputs:
+  NODE_VERSION:
+    description: "The version of a Node.js that must be installed on a server"
+    required: true
+    type: string
+    default: "16.16.0"
+runs:
+  using: "composite"
+  steps:
+    - name: "Setup Node"
+      id: setup_node
+      run: |
+        cd ${{ github.action_path }}
+        chmod +x ./bin/main.sh
+        ./bin/main.sh 
+        echo "${{ github.action_path }}/env/node/bin" >> $GITHUB_PATH
+      shell: bash
+    - name: "Check if Node is Available"
+      id: check_node
+      run: node -v
+      shell: bash
