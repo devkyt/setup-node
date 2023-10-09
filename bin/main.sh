@@ -10,6 +10,7 @@ OS=$(get_os)
 ARCH=$(get_arch)
 
 node_version_is_valid $NODE_VERSION
+os_is_valid $OS
 
 NODE_URL=$(build_node_url_for_download $NODE_VERSION $OS $ARCH) 
 

@@ -31,4 +31,14 @@ function node_version_exists {
     fi
 }
 
+function os_is_valid {
+    local OS=$1
+    local AVAILABLE_OS=("linux", "darwin")
+
+    if [[ ! ${AVAILABLE_OS[@]} =~ $OS]]; then
+        echo -e "${BoldRed}Error: OS ${OS} is not supported. This script works only for Linux and MacOS " >&2
+        exit 1
+    fi
+}
+
 
