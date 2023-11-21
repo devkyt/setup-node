@@ -9,7 +9,7 @@ Run it gently:
 ```yaml
 steps:
   - name: "Setup Node.js"
-    uses: s8ckerpunch/setup-node@main
+    uses: devkyt/setup-node@main
     with:
       NODE_VERSION: "20.7.0"
 ```
